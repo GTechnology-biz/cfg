@@ -1,0 +1,13 @@
+https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4
+install libinput
+
+/etc/X11/xorg.conf.d/30-touchpad.conf
+
+Section "InputClass"
+    Identifier "touchpad"
+    Driver "libinput"
+    MatchIsTouchpad "on"
+    Option "Tapping" "on"
+    Option "ScrollMethod" "twofinger"
+    Option "NaturalScrolling" "on"
+EndSection
