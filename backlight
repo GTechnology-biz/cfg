@@ -1,1 +1,28 @@
 https://cialu.net/brightness-control-not-work-i3wm/
+
+So, just download or clone the source of light:
+
+
+$ git clone https://github.com/haikarainen/light.git
+
+Compile and install it:
+
+
+$ sudo make
+
+$ sudo make install
+
+On Fedora 26 and Ubuntu 17.04 all went fine. You can check it:
+
+
+$ light --help
+
+And, finally, replace the lines of code in the i3wm .config file:
+
+
+# Screen brightness controls
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
+
